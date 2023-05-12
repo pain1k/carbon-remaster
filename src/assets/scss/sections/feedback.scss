@@ -26,6 +26,7 @@
       }
     }
     &-label{
+      cursor: pointer;
       input[type=checkbox]:checked+p:before{
         background: url("../../static/img/checked.svg");
       }
