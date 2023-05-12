@@ -1,0 +1,54 @@
+.main {
+  background-color: $gray;
+  background-image: url('../../static/img/bg.png');
+  background-repeat: no-repeat;
+  background-position: center 184px;
+  border-radius: $radius;
+  position: relative;
+  min-height: 870px;
+  padding: 64px 21px 0;
+  &__uptitle{
+    @include h2();
+    margin: 0 auto;
+    text-align: center;
+    max-width: 422px;
+  }
+  &__poster{
+    position: absolute;
+    bottom: -173px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__caption{
+    position: absolute;
+    top: 57%;
+    right: 5.6%;
+
+  }
+  @media($tablet){
+    border-radius: $sm-radius;
+  }
+  @media($mobile){
+    padding: 48px 16px 0;
+    min-height: 455px;
+    background-position: center 131px;
+    &__uptitle{
+      font-size: 24px;
+      line-height: 28px;
+    }
+    &__poster{
+      max-width: 343px;
+      bottom: -41px;
+    }
+    &__caption{
+      top: 136px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+  @media(max-width: 400px){
+    &__poster{
+      max-width: 100%;
+    }
+  }
+}

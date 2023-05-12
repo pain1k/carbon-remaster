@@ -1,0 +1,33 @@
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 0;
+  width: 100%;
+  max-width: 302px;
+  background: $red;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-family: "Manrope";
+  font-weight: 800;
+  @include title2($white);
+  &:hover{
+    background: $hovered;
+  }
+  &:active{
+    background: $active;
+    color: #D6B687;
+  }
+  &:disabled{
+    color: $gray-6;
+    background: $gray-7;
+  }
+  &_l{
+    max-width: 370px;
+  }
+  @media($mobile){
+    padding: 16px 0;
+    max-width: 100%;
+  }
+}

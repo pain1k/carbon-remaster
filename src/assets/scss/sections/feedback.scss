@@ -1,0 +1,108 @@
+.feedback{
+  padding: 120px;
+  background-color: $gray-1;
+  border-radius: $radius;
+  background-image: url('../../static/img/request.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  &__title{
+    @include h1($white);
+    font-weight: 800;
+    span{
+      color: $red;
+    }
+  }
+  &__subtitle{
+    margin-top: 32px;
+    @include body($gray-5);
+  }
+  &__form{
+    margin-top: 48px;
+    &-input{
+      max-width: calc(33.3% - 18px);
+      &:not(:last-of-type){
+        margin-right: 24px;
+      }
+    }
+    &-label{
+      input[type=checkbox]:checked+p:before{
+        background: url("../../static/img/checked.svg");
+      }
+    }
+    &-text{
+      position: relative;
+      max-width: 454px;
+      padding-left: 52px;
+      @include body2($gray-4);
+      &:before{
+        content: "";
+        background: url("../../static/img/not-checked.svg");
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        left: 0;
+        top: 8px;
+        display: inline-block;
+      }
+    }
+    &-wrapper{
+      margin-top: 60px;
+    }
+    &-btn{
+      margin-left: auto;
+    }
+  }
+  @media($tablet){
+    padding: 32px 16px;
+    border-radius: $sm-radius;
+  }
+  @media($mobile){
+    background-image: none;
+    &__title{
+      @include h3();
+      br{
+        display: none;
+      }
+    }
+    &__subtitle{
+      @include body2($gray-5);
+      margin-top: 16px;
+    }
+    &__form{
+      margin-top: 24px;
+      &-input{
+        max-width: 100%;
+        &:not(:last-of-type){
+          margin-right: 0;
+          margin-bottom: 16px;
+        }
+      }
+      &-wrapper{
+        margin-top: 24px;
+        flex-wrap: wrap;
+      }
+      &-label{
+        width: 100%;
+        input[type=checkbox]:checked+p:before{
+          background: url("../../static/img/checked-sm.svg");
+        }
+      }
+      &-text{
+        max-width: 100%;
+        padding-left: 36px;
+        @include caption($gray-4);
+        &:before{
+          top: 0;
+          width: 24px;
+          height: 24px;
+          background: url("../../static/img/not-checked-sm.svg");
+        }
+      }
+      &-btn{
+        margin-left: 0;
+        margin-top: 24px;
+      }
+    }
+  }
+}

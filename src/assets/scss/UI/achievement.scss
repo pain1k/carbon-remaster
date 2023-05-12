@@ -1,4 +1,4 @@
-.achievement{
+.achievement-item{
   background: $gray-1;
   border-radius: $radius;
   padding: 96px 0;
@@ -12,6 +12,24 @@
   }
   &__description{
     @include title($gray-5);
-    margin-top: 8px;
+  }
+  @media($tablet){
+    background: $gray-2;
+    border-radius: $sm-radius;
+    padding: 24px 0;
+    &:not(:last-child){
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+  }
+  @media($mobile){
+    &__title{
+      font-size: 48px;
+      line-height: 64px;
+    }
+    &__description{
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 }

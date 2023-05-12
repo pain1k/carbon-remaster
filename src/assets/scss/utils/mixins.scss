@@ -1,0 +1,66 @@
+@mixin largeTitle{
+  font-size: 288px;
+  line-height: 288px;
+  letter-spacing: -24px;
+  font-weight: 800;
+}
+@mixin mediumTitle($color: $dark){
+  font-weight: 800;
+  font-size: 96px;
+  line-height: 120px;
+  letter-spacing: -4px;
+  color: $color;
+}
+
+@mixin h1($color: $dark){
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 72px;
+  letter-spacing: -2.5px;
+  color: $color;
+}
+
+@mixin h2($color: $dark){
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -2px;
+  color: $color;
+}
+
+@mixin title($color: $dark){
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -1px;
+  color: $color;
+}
+@mixin h3(){
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -.4px;
+}
+@mixin title2($color: $dark){
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -1px;
+  color: $color;
+}
+@mixin body($color: $dark){
+  font-size: 20px;
+  line-height: 32px;
+  color: $color;
+}
+@mixin body2($color: $dark){
+  font-size: 16px;
+  line-height: 24px;
+  color: $color;
+}
+@mixin caption($color: $dark){
+  font-size: 12px;
+  line-height: 16px;
+  color: $color;
+}
+%test{
+  background: red;
+}

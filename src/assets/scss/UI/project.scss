@@ -1,0 +1,77 @@
+.project-item{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  &:not(:first-child){
+    display: none;
+  }
+  &__left{
+    padding: 120px 0 120px 120px;
+    width: 100%;
+    max-width: calc(64% - 82px);
+  }
+  &__title{
+    @include h1($white);
+    margin-bottom: 48px;
+    transition: .2s all;
+  }
+  &__btn{
+    margin-top: 48px;
+  }
+  &__right{
+    width: 100%;
+    max-width: 36%;
+    margin-left: auto;
+    align-self: stretch;
+    img{
+      object-fit: cover;
+      height: 100%;
+      border-radius: $radius $radius $radius 0;
+    }
+  }
+  &:hover{
+    .project-item__title{
+      color: $red;
+    }
+  }
+  @media($tablet){
+    &__left{
+      padding: 32px 0 32px 16px;
+    }
+    &__right{
+      img{
+        border-radius: $sm-radius;
+      }
+    }
+  }
+
+  @media($mobile){
+    flex-direction: column-reverse;
+    &:not(:first-child){
+      margin-top: 8px;
+      display: flex;
+    }
+    &__title{
+      margin-bottom: 24px;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: -.4px;
+      padding-left: 24px;
+    }
+    &__btn{
+      display: none;
+    }
+    &__left{
+      padding: 0 !important;
+      max-width: 100%;
+      margin-top: -84px;
+    }
+    &__right{
+      margin-left: 0;
+      max-width: 100%;
+      img{
+        min-height: 515px;
+      }
+    }
+  }
+}

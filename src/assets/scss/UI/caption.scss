@@ -1,0 +1,63 @@
+.caption{
+  background: transparent;
+  border:4px solid $red;
+  padding: 15px;
+  width: 198px;
+  height: 198px;
+  border-radius: 50%;
+  transition: .3s all;
+  @media($mobile){
+    padding: 8px;
+    width: 136px;
+    height: 136px;
+  }
+  &__text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -1px;
+    transform: rotate(-30deg);
+    color: $white;
+    background: $red;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    transition: .3s all;
+    @media($mobile){
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+  &:hover{
+    border-color: $hovered;
+    .caption__text{
+      background: $hovered;
+    }
+  }
+  &:active{
+    border-color: $active;
+    .caption__text{
+      background: $active;
+      color: #D6B687;
+    }
+  }
+  &:disabled{
+    border-color: $gray-7;
+    .caption__text{
+      color: $gray-6;
+      background: $gray-7;
+    }
+  }
+  &_l{
+    width: 254px;
+    height: 254px;
+  }
+  &_s{
+    width: 136px;
+    height: 136px;
+  }
+}

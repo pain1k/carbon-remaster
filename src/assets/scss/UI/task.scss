@@ -1,0 +1,43 @@
+.task{
+  &-list{
+    background-color: $gray-2;
+    border-radius: 48px;
+    &__item{
+      padding: 48px;
+      border-radius: 48px;
+      display: flex;
+    }
+    &__name{
+      @include title2($white);
+      font-weight: 800;
+    }
+    &__description{
+      @include body2($gray-6);
+      max-width: calc(100% - 100px);
+      margin-left: auto;
+      font-weight: 500;
+    }
+  }
+  &_gray{
+    background-color: $gray-3;
+  }
+  @media($mobile){
+    &-list{
+      border-radius: 24px;
+      &__name{
+        margin-bottom: 8px;
+        @include body2($white);
+      }
+      &__item{
+        padding: 24px;
+        display: block;
+        border-radius: 24px;
+      }
+      &__description{
+        margin-left: 0;
+        max-width: 100%;
+        @include body2($white);
+      }
+    }
+  }
+}

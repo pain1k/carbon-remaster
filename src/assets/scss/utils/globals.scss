@@ -1,0 +1,72 @@
+@import "mixins";
+
+@import "../UI/caption";
+@import "../UI/achievement";
+
+@import "../UI/task";
+@import "../UI/btn";
+@import "../UI/inputs";
+@import "../UI/project";
+
+html {
+  height: 100%;
+  font-family: 'Manrope';
+  font-weight: 500;
+}
+body{
+  background: $dark;
+  color: $dark;
+}
+//*{
+//  scrollbar-color: $blue rgba(61, 64, 80, 1);
+//  scrollbar-width:thin;
+//  &::-webkit-scrollbar{
+//    width:6px;
+//    height:8px;
+//  }
+//  &::-webkit-scrollbar-track{
+//    background-color:rgba(61, 64, 80, 1);
+//    border-radius: 3px;
+//  }
+//  &::-webkit-scrollbar-thumb{
+//    background-color: $blue;
+//    border-radius: 3px;
+//  }
+//}
+
+a,
+a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+section:not(:first-of-type){
+  margin-top: 8px;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding: 0 8px;
+  margin: 0 auto;
+  @media($tablet){
+    padding: 0;
+  }
+}
+
+.h{
+  @include h1()
+}
+
+.test{
+  @extend %test
+}

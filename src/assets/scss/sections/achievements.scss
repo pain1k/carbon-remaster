@@ -1,0 +1,53 @@
+.achievements{
+  &-list {
+    display: flex;
+    align-items: center;
+    &__item {
+      background: $gray-1;
+      border-radius: $radius;
+      padding: 96px 0;
+      width: 100%;
+      text-align: center;
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+      &__title {
+        @include mediumTitle($white);
+      }
+      &__description {
+        @include title($gray-5);
+      }
+  }
+  @media($tablet){
+    &-list {
+      flex-direction: column;
+      border-radius: $sm-radius;
+      background: $gray-1;
+      padding: 32px 16px;
+      //&__item {
+      //  background: $gray-2;
+      //  border-radius: $sm-radius;
+      //  padding: 24px 0;
+      //  &:not(:last-child){
+      //    margin-right: 0;
+      //    margin-bottom: 8px;
+      //  }
+      //}
+    }
+  }
+  //@media($mobile){
+  //  &-list{
+  //    &__title{
+  //      font-size: 48px;
+  //      line-height: 64px;
+  //      letter-spacing: -1px;
+  //    }
+  //    &__description{
+  //      font-size: 20px;
+  //      line-height: 24px;
+  //      letter-spacing: -.4px;
+  //    }
+  //  }
+  //}
+}
