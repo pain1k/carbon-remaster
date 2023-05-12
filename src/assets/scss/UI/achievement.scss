@@ -1,0 +1,17 @@
+.achievement{
+  background: $gray-1;
+  border-radius: $radius;
+  padding: 96px 0;
+  width: 100%;
+  text-align: center;
+  &:not(:last-child){
+    margin-right: 8px;
+  }
+  &__title{
+    @include mediumTitle($white);
+  }
+  &__description{
+    @include title($gray-5);
+    margin-top: 8px;
+  }
+}
