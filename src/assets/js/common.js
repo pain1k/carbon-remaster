@@ -26,4 +26,10 @@ $(document).ready(function(){
         closeMobileHeader($(window).width());
     });
 
+    $('.service-item__button').on('click',function(){
+        let $t = $(this);
+
+        $t.toggleClass('service-item__button_active');
+        $t.closest('.service-item__top').next('.service-item__bottom').toggle(300);
+    })
 })

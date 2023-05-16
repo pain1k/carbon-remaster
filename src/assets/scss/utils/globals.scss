@@ -2,11 +2,11 @@
 
 @import "../UI/caption";
 @import "../UI/achievement";
-
 @import "../UI/task";
 @import "../UI/btn";
 @import "../UI/inputs";
 @import "../UI/project";
+@import "../UI/breadcrumbs";
 
 html {
   height: 100%;
@@ -34,17 +34,6 @@ body{
 //  }
 //}
 
-a,
-a:visited{
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-li {
-  list-style-type: none;
-}
-
 section:not(:first-of-type){
   margin-top: 8px;
 }
@@ -58,11 +47,17 @@ section:not(:first-of-type){
   width: 100%;
   padding: 0 8px;
   margin: 0 auto;
-  @media($tablet){
+  @media($mobile){
     padding: 0;
   }
 }
-
+.mobile-wrapper{
+  @media($tablet){
+    padding: 32px 16px;
+    background: $gray-1;
+    border-radius: $sm-radius;
+  }
+}
 .h{
   @include h1()
 }

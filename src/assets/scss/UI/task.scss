@@ -6,6 +6,9 @@
       padding: 48px;
       border-radius: 48px;
       display: flex;
+      &_gray{
+        background-color: $gray-3;
+      }
     }
     &__name{
       @include title2($white);
@@ -17,9 +20,6 @@
       margin-left: auto;
       font-weight: 500;
     }
-  }
-  &_gray{
-    background-color: $gray-3;
   }
   @media($mobile){
     &-list{

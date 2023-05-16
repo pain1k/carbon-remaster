@@ -1,0 +1,36 @@
+.breadcrumbs{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  &__item{
+    display: inline-flex;
+    position: relative;
+    padding-left: 15px;
+    margin-left: 7px;
+    @include caption($gray-4);
+    &:first-child{
+      padding-left: 0;
+      margin-left: 0;
+        &:before{
+          display: none;
+        }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $gray-6;
+      height: 2px;
+      width: 8px;
+    }
+  }
+  &__link{
+    display: inline-flex;
+    font-weight: 800;
+    &:hover{
+      opacity: .8;
+    }
+  }
+}

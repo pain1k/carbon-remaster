@@ -1,0 +1,24 @@
+.lead-block{
+  background: $gray;
+  border-radius: $radius;
+  padding: 64px 120px 84px;
+  &__title{
+    @include h1($dark);
+    margin-top: 48px;
+    text-align: center;
+  }
+  @media($tablet){
+    border-radius: 0;
+    background: transparent;
+    padding: 0 0 24px;
+    &__title{
+      color: $white;
+    }
+  }
+  @media($mobile){
+    &__title{
+      @include h2($white);
+      margin-top: 8px;
+    }
+  }
+}
