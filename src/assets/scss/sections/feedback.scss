@@ -1,7 +1,5 @@
 .feedback{
-  padding: 120px;
-  background-color: $gray-1;
-  border-radius: $radius;
+  @include section($gray-1);
   background-image: url('../../static/img/request.png');
   background-repeat: no-repeat;
   background-position: right;
@@ -55,8 +53,7 @@
     }
   }
   @media($tablet){
-    padding: 32px 16px;
-    border-radius: $sm-radius;
+    @include section-sm();
   }
   @media($mobile){
     background-image: none;

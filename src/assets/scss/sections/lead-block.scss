@@ -1,24 +1,121 @@
 .lead-block{
   background: $gray;
   border-radius: $radius;
-  padding: 64px 120px 84px;
+  padding: 64px 152px 84px;
+  position: relative;
   &__title{
     @include h1($dark);
     margin-top: 48px;
     text-align: center;
   }
+  &__text{
+    font-size: 24px;
+    line-height: 32px;
+    margin: 48px auto 0;
+    color: $gray-2;
+    text-align: center;
+    max-width: 93%;
+  }
+  &__images{
+    position: relative;
+    margin: 88px auto 0;
+    max-width: 1120px;
+  }
+  &__image{
+    height: 496px;
+    max-width: 496px;
+    margin: 0 auto;
+      img{
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 48px;
+      }
+    &_medium{
+      position: absolute;
+      max-width: 235px;
+      height: 242px;
+    }
+    &_small{
+      position: absolute;
+      max-width: 118px;
+      height: 118px;
+      bottom: 15.5%;
+      left: 15.7%;
+    }
+    &_left{
+      left: 0;
+      top: 11.8%;
+    }
+    &_right{
+      right: 0;
+      bottom: 15.5%;
+    }
+  }
+  &__caption{
+    position: absolute;
+    right: 7.4%;
+    top: -7.7%;
+  }
   @media($tablet){
-    border-radius: 0;
-    background: transparent;
-    padding: 0 0 24px;
+    @include section-sm();
+    &_no-bg{
+      background: transparent;
+      padding: 0 0 24px;
+      border-radius: 0;
+    }
     &__title{
-      color: $white;
+      &_white{
+        color: $white;
+      }
+    }
+    &__image{
+      img{
+        border-radius: 32px;
+      }
     }
   }
   @media($mobile){
     &__title{
-      @include h2($white);
+      @include h2();
       margin-top: 8px;
+    }
+    &__text{
+      margin-top: 24px;
+      max-width: 100%;
+      @include body2($gray-2);
+    }
+    &__images{
+      margin-top: 58px;
+      margin-bottom: 20px;
+    }
+    &__image{
+      height: 260px;
+      max-width: 260px;
+      &_medium{
+        max-width: 120px;
+        height: 120px;
+      }
+      &_small{
+        position: absolute;
+        max-width: 84px;
+        height: 84px;
+        bottom: 4%;
+        left: 0;
+      }
+      &_left{
+        left: 2.9%;
+        top: -13%;
+      }
+      &_right{
+        right: 0;
+        bottom: -7%;
+      }
+    }
+    &__caption{
+      right:0;
+      top: -7.1%;
     }
   }
 }

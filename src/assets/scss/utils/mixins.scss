@@ -61,6 +61,15 @@
   line-height: 16px;
   color: $color;
 }
+@mixin section($background: $gray){
+  padding: 120px;
+  border-radius: $radius;
+  background-color: $background;
+}
+@mixin section-sm(){
+  padding: 32px 16px;
+  border-radius: $sm-radius;
+}
 %test{
   background: red;
 }

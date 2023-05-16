@@ -1,7 +1,5 @@
 .reconstruction{
-  background-color: $gray;
-  border-radius: $radius;
-  padding: 120px;
+  @include section();
   &__title{
     @include h1();
     margin-bottom: 48px;
@@ -16,8 +14,7 @@
     margin-top: 32px;
   }
   @media($tablet){
-    border-radius: $sm-radius;
-    padding: 32px 16px;
+    @include section-sm();
   }
   @media($mobile){
     &__title{

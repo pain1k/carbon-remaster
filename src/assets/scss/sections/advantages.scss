@@ -1,0 +1,66 @@
+.advantages{
+  @include section($gray-1);
+  &__list{
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__item{
+    position: relative;
+    width: 100%;
+    max-width: calc(33.3% - 5px);
+    background-color: $gray-2;
+    border-radius: 48px;
+    padding: 136px 48px 48px;
+    &:before{
+      content: url('../../static/img/star.svg');
+      position: absolute;
+      left: 48px;
+      top: 48px;
+    }
+    &:nth-child(n+4){
+      margin-top: 8px;
+    }
+  }
+  &__description{
+    @include title($white);
+  }
+  @media($tablet){
+    @include section-sm();
+    &__item{
+      border-radius: 24px;
+      padding: 96px 24px 24px;
+      max-width: calc(50% - 4px);
+      &:before{
+        top: 24px;
+        left: 24px;
+      }
+      &:nth-child(n+4){
+        margin-top: unset;
+      }
+      &:nth-child(n+3){
+        margin-top: 8px;
+      }
+    }
+  }
+  @media($mobile){
+    &__list{
+      margin-top: 24px;
+    }
+    &__item{
+      max-width: 100%;
+      &:nth-child(n+3){
+        margin-top: unset;
+      }
+      &:not(:first-child){
+        margin-top: 8px;
+      }
+    }
+    &__description{
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: unset;
+    }
+  }
+}

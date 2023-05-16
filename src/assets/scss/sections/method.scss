@@ -1,0 +1,56 @@
+.method{
+  @include section($gray);
+  &-item{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__title{
+      @include h1($dark);
+      width: 100%;
+      max-width: 38.6%;
+      &_white{
+        color: $white;
+      }
+    }
+    &__text-wrapper{
+      width: 100%;
+      max-width: calc(61.4% - 56px);
+      :not(:first-child){
+        margin-top: 32px;
+      }
+    }
+    &__text{
+      @include body($gray-2);
+      font-weight: 500;
+      &_light{
+        color:$gray-5;
+      }
+    }
+  }
+  @media($laptop){
+    &-item{
+      &__title{
+        max-width: 100%;
+        margin-bottom: 24px;
+      }
+      &__text-wrapper{
+        max-width: 100%;
+      }
+    }
+  }
+  @media($tablet){
+    @include section-sm();
+  }
+  @media($mobile){
+    &-item{
+      &__title{
+        @include h3();
+      }
+      &__text-wrapper{
+        :not(:first-child){
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

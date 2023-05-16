@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <div class="mobile-wrapper">
-      <section class="lead-block">
+      <section class="lead-block lead-block_no-bg">
         <ul class="breadcrumbs lead-block__breadcrumbs">
           <li class="breadcrumbs__item">
             <a href="/" class="breadcrumbs__link">
@@ -21,7 +21,7 @@
             </a>
           </li>
         </ul>
-        <h1 class="lead-block__title">Услуги</h1>
+        <h1 class="lead-block__title lead-block__title_white">Услуги</h1>
       </section>
       <section class="services">
         <div class="services__item service-item">
@@ -134,6 +134,23 @@
             <a href="#" class="service-item__link">Усиление металлических конструкций</a>
           </div>
         </div>
+      </section>
+      <section class="feedback">
+        <h3 class="feedback__title">Отправить проект <br>
+          на <span>расчет стоимости бесплатно</span></h3>
+        <p class="feedback__subtitle">Оставьте заявку и мы свяжемся с Вами в ближайшее время</p>
+        <form class="feedback__form" action="#">
+          <input type="text" class="input feedback__form-input" placeholder="Имя">
+          <input type="text" class="js-type-phone input feedback__form-input" placeholder="Телефон">
+          <input type="email" class="input feedback__form-input" placeholder="E-mail">
+          <div class="wrapper feedback__form-wrapper">
+            <label class="feedback__form-label">
+              <input type="checkbox" class="checkbox feedback__form-checkbox">
+              <p class="feedback__form-text">Нажимая на кнопку «Отправить» вы соглашаетесь на обработку персональных данных</p>
+            </label>
+            <button class="btn feedback__form-btn">Отправить</button>
+          </div>
+        </form>
       </section>
     </div>
   </div>

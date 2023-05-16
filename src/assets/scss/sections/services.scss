@@ -7,9 +7,7 @@
   }
 }
 .service-item{
-  background: $gray;
-  border-radius: $radius;
-  padding: 120px;
+  @include section();
   &__top{
     display: flex;
     align-items: center;
