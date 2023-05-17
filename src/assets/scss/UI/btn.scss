@@ -23,6 +23,13 @@
     color: $gray-6;
     background: $gray-7;
   }
+  &_s{
+    max-width: 122px;
+    padding: 16px 0;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: unset;
+  }
   &_l{
     max-width: 370px;
   }

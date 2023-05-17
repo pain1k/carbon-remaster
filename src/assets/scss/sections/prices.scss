@@ -1,0 +1,98 @@
+.prices{
+  @include section();
+  &__title{
+    @include h1();
+  }
+  &__table{
+    margin-top: 64px;
+    &-item{
+      padding: 36px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:nth-child(odd){
+        background-color: $gray-7;
+      }
+      &:nth-child(even){
+        background-color: $gray-6;
+      }
+      &:first-child{
+        border-radius: 48px 48px 0 0;
+      }
+      &:last-child{
+        border-radius:0 0 48px 48px;
+      }
+    }
+  }
+  &__name{
+    width: 100%;
+    @include title2();
+    font-weight: 800;
+  }
+  &__order{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  &__cost{
+    @include body2($gray-2);
+    text-align: right;
+  }
+  &__btn{
+    margin-left: 48px;
+  }
+  @media($tablet){
+    @include section-sm();
+    &__table{
+      &-item{
+        padding: 24px;
+        &:first-child{
+          border-radius: 24px 24px 0 0;
+        }
+        &:last-child{
+          border-radius:0 0 24px 24px;
+        }
+      }
+    }
+  }
+  @media($mobile){
+    &__title{
+      @include h3();
+    }
+    &__table{
+      margin-top: 24px;
+      &-item{
+        border-radius: 24px;
+        flex-direction: column;
+        &:first-child{
+          border-radius: 24px;
+        }
+        &:last-child{
+          border-radius:24px;
+        }
+        &:nth-child(even){
+          background-color: $gray-7;
+        }
+        &:not(:first-child){
+          margin-top: 8px;
+        }
+      }
+    }
+    &__name{
+      line-height: 24px;
+    }
+    &__order{
+      margin-top: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__cost{
+      text-align: left;
+    }
+    &__btn{
+      margin-top: 16px;
+      margin-left: 0;
+    }
+  }
+}
