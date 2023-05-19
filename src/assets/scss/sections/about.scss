@@ -13,8 +13,43 @@
   &__btn{
     margin-top: 48px;
   }
+  &-page{
+    min-height: 1035px;
+    &__caption{
+      position: absolute;
+      z-index: 10;
+      bottom: 29%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &__achievements{
+      background-image: url('../../static/img/achievements.png');
+      background-size: cover;
+      background-position: center;
+      padding: 32px;
+      border-radius: 96px;
+      position: relative;
+      margin-top: -407px !important;
+    }
+  }
   @media($tablet){
     @include section-sm();
+    &-page{
+      min-height: unset;
+      padding-bottom: 70px;
+      &__achievements{
+          padding: 32px 16px;
+          border-radius: 32px;
+          margin-top: -48px !important;
+        &-list{
+          background: unset;
+        }
+      }
+      &__caption{
+        position: relative;
+        margin-top: 24px;
+      }
+    }
   }
   @media($mobile){
     background-image: none;
@@ -23,6 +58,11 @@
     }
     &__btn{
       margin-top: 24px;
+    }
+    &-page{
+      &__caption{
+        position: relative;
+      }
     }
   }
 }
