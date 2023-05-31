@@ -1,9 +1,54 @@
 .project-item{
+  background-color: $gray-1;
+  background-image: url('../../static/img/objects.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: $radius;
   display: flex;
   align-items: center;
   width: 100%;
-  &:not(:first-child){
+  &:not(:last-child){
+    margin-bottom: 8px;
+  }
+  &_no-bg{
+    background-image: none;
+  }
+  &_hidden{
     display: none;
+  }
+  &__wrapper{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+      div{
+        background-color: $white;
+        img{
+          filter: invert(1);
+        }
+      }
+      a{
+        color: $red;
+      }
+    }
+  }
+  &__icon{
+    background-color: $red;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+    transition: .3s all;
+    &:hover{
+      background-color: $white;
+      img{
+        filter: invert(1);
+      }
+    }
   }
   &__left{
     padding: 120px 0 120px 120px;
@@ -12,8 +57,7 @@
   }
   &__title{
     @include h1($white);
-    display: block;
-    margin-bottom: 48px;
+    display: inline-block;
     transition: .2s all;
     &:hover{
       color: $red;
@@ -34,6 +78,7 @@
     }
   }
   @media($tablet){
+    border-radius: $sm-radius;
     &__left{
       padding: 32px 0 32px 16px;
     }
@@ -42,16 +87,17 @@
         border-radius: $sm-radius;
       }
     }
+    &_no-bg{
+      background-color: $dark;
+    }
   }
 
   @media($mobile){
     flex-direction: column-reverse;
-    &:not(:first-child){
-      margin-top: 8px;
-      display: flex;
+    &__icon{
+      display: none;
     }
     &__title{
-      margin-bottom: 24px;
       font-size: 20px;
       line-height: 24px;
       letter-spacing: -.4px;
@@ -71,6 +117,13 @@
       img{
         min-height: 515px;
       }
+    }
+    &_hidden{
+      margin-top: 8px;
+      display: flex;
+    }
+    &_no-bg{
+      background-color: unset;
     }
   }
 }

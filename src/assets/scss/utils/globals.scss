@@ -51,13 +51,6 @@ section:not(:first-of-type){
     padding: 0;
   }
 }
-.mobile-wrapper{
-  @media($tablet){
-    padding: 32px 16px;
-    background: $gray-1;
-    border-radius: $sm-radius;
-  }
-}
 .h{
   @include h1()
 }

@@ -83,6 +83,9 @@
     &__title{
       @include h2();
       margin-top: 8px;
+      &_white{
+        color: $white;
+      }
     }
     &__text{
       margin-top: 24px;

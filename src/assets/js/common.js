@@ -32,4 +32,10 @@ $(document).ready(function(){
         $t.toggleClass('service-item__button_active');
         $t.closest('.service-item__top').next('.service-item__bottom').toggle(300);
     })
+
+    $('.review-item__more').on('click',function(){
+        let $t = $(this);
+
+        $t.closest('.review-item__info').find('.review-item__block').toggle(300);
+    })
 })
