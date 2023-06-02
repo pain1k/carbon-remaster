@@ -38,4 +38,25 @@ $(document).ready(function(){
 
         $t.closest('.review-item__info').find('.review-item__block').toggle(300);
     })
+
+    const $tablinks = $('.map__tabs a')
+    const $tabcontent = $('.map__content-block')
+    const $frames = $('.map__frame')
+
+    $tablinks.on('click', function(e){
+        e.preventDefault();
+
+        let $t = $(this)
+        const id = $t.data('tab')
+        const $tab = $(`.map__content-block[data-tab=${id}]`)
+        const $frame = $(`.map__frame[data-tab=${id}]`)
+
+        $tabcontent.removeClass('map__content-block_show')
+        $tablinks.removeClass('map__tab-item_active')
+        $frames.removeClass('map__frame_active')
+
+        $t.addClass('map__tab-item_active')
+        $tab.addClass('map__content-block_show')
+        $frame.addClass('map__frame_active')
+    })
 })

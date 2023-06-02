@@ -25,12 +25,19 @@
       height: 2px;
       width: 8px;
     }
+    &:hover{
+      opacity: .8;
+    }
+    &:last-child{
+      cursor: default;
+      &:hover{
+        opacity: 1;
+      }
+    }
   }
   &__link{
     display: inline-flex;
     font-weight: 800;
-    &:hover{
-      opacity: .8;
-    }
+
   }
 }

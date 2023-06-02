@@ -1,0 +1,163 @@
+.map{
+  position: relative;
+  &__frame{
+    border-radius: 96px;
+    display: none;
+    height: 648px;
+    &_active{
+      display: block;
+    }
+  }
+  &__block{
+    padding: 64px;
+    background-color: $dark;
+    border-radius: 48px;
+    position: absolute;
+    right: 64px;
+    bottom: 64px;
+    top: 64px;
+    max-width: 752px;
+  }
+  &__tabs{
+    display: flex;
+    align-items: flex-end;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 16px;
+    scrollbar-color: $white rgba(61, 64, 80, 1);
+    scrollbar-width:thin;
+      &::-webkit-scrollbar{
+        width:4px;
+        height:3px;
+      }
+      &::-webkit-scrollbar-track{
+        background-color:rgba(61, 64, 80, 1);
+        border-radius: 3px;
+      }
+      &::-webkit-scrollbar-thumb{
+        background-color: $white;
+        border-radius: 3px;
+      }
+  }
+  &__tab-item{
+    @include h2($gray-4);
+    white-space: nowrap;
+    max-width: 752px;
+    cursor: pointer;
+    user-select: none;
+    &:not(:first-child){
+      margin-left: 32px;
+    }
+    &_active{
+      color: $white;
+      font-size: 48px;
+      line-height: 53px;
+    }
+  }
+  &__content{
+    &-block{
+      display: none;
+      border-radius: $sm-radius;
+      background-color: $gray-1;
+      padding: 48px;
+      margin-top: 38px;
+      font-size: 24px;
+      line-height: 32px;
+      color: $white;
+      &_show{
+        display: block;
+      }
+      :not(:first-of-type){
+        margin-top: 24px;
+      }
+    }
+    &-phone,
+    &-mail,
+    &-address,
+    &-time{
+      position: relative;
+      padding-left: 48px;
+      &:before{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+    &-phone{
+      &:before{
+        content: url('../../static/img/phone.svg');
+      }
+    }
+    &-mail{
+      &:before{
+        content: url('../../static/img/mail.svg');
+      }
+    }
+    &-address{
+      &:before{
+        content: url('../../static/img/address.svg');
+      }
+    }
+    &-time{
+      &:before{
+        content: url('../../static/img/time.svg');
+      }
+    }
+  }
+  @media($tablet){
+    &__frame{
+      border-radius: $sm-radius;
+      height: 515px;
+    }
+    &__block{
+      background-color: transparent;
+      padding: 0;
+      position: relative;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      max-width: 100%;
+      margin-top: 12px;
+      padding: 0 16px;
+    }
+    &__tabs{
+      padding-bottom: 4px;
+    }
+    &__content{
+      margin-top: 8px;
+      &-block{
+        background-color: $gray-2;
+        padding: 24px;
+        margin-top: 0;
+      }
+    }
+  }
+  @media($mobile){
+    &__block{
+      margin-top: 12px;
+    }
+    &__tab-item{
+      @include body2($gray-4);
+      &_active{
+        @include h3();
+        color: $white;
+      }
+    }
+    &__content{
+      &-block{
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &-phone,
+      &-mail,
+      &-address,
+      &-time{
+        padding-left: 40px;
+      }
+    }
+  }
+}
