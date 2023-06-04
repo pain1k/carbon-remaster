@@ -83,10 +83,11 @@
     max-width: 253px;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 40px;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
+    white-space: nowrap;
+    //max-height: 40px;
+    //-webkit-line-clamp: 1;
+    //-webkit-box-orient: vertical;
+    //display: -webkit-box;
     text-align: right;
     margin-left: auto;
   }
@@ -174,13 +175,14 @@
   }
   &__uptitle{
     @include h2($dark);
+    white-space: nowrap;
     max-width: 253px;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 40px;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
+    //max-height: 40px;
+    //-webkit-line-clamp: 1;
+    //-webkit-box-orient: vertical;
+    //display: -webkit-box;
   }
   &__wrapper{
     display: flex;

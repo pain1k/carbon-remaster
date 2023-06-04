@@ -1,4 +1,6 @@
 import $ from 'jquery'
+import 'slick-carousel'
+
 $(document).ready(function(){
 
     $('.js-type-phone').on('input', function(e){
