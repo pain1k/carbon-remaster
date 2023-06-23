@@ -7,6 +7,9 @@
 @import "../UI/inputs";
 @import "../UI/project";
 @import "../UI/breadcrumbs";
+@import "../UI/slider-item";
+@import "../UI/slick-theme";
+@import "../UI/slick";
 
 html {
   height: 100%;
@@ -44,6 +47,7 @@ section:not(:first-of-type){
 }
 
 .container {
+  max-width: 2100px;
   width: 100%;
   padding: 0 8px;
   margin: 0 auto;

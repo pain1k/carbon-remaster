@@ -2,61 +2,19 @@
 
 // Default Variables
 
-// Slick icon entity codes outputs the following
-// "\2190" outputs ascii character "←"
-// "\2192" outputs ascii character "→"
-// "\2022" outputs ascii character "•"
-
-$slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: white !default;
-$slick-dot-color: black !default;
+$slick-dot-color: red !default;
 $slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "\2190" !default;
-$slick-next-character: "\2192" !default;
+$slick-prev-character: url('../../static/img/arrow.svg') !default;
+$slick-next-character: url('../../static/img/arrow.svg') !default;
 $slick-dot-character: "\2022" !default;
 $slick-dot-size: 6px !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
 
-@function slick-image-url($url) {
-    @if function-exists(image-url) {
-        @return image-url($url);
-    }
-    @else {
-        @return url($slick-loader-path + $url);
-    }
-}
-
-@function slick-font-url($url) {
-    @if function-exists(font-url) {
-        @return font-url($url);
-    }
-    @else {
-        @return url($slick-font-path + $url);
-    }
-}
-
-/* Slider */
-
-.slick-list {
-    .slick-loading & {
-        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
-    }
-}
-
-/* Icons */
-@if $slick-font-family == "slick" {
-    @font-face {
-        font-family: "slick";
-        src: slick-font-url("slick.eot");
-        src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
-        font-weight: normal;
-        font-style: normal;
-    }
-}
 
 /* Arrows */
 
@@ -64,13 +22,12 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
     position: absolute;
     display: block;
-    height: 20px;
-    width: 20px;
-    line-height: 0px;
-    font-size: 0px;
+    height: 48px;
+    width: 48px;
     cursor: pointer;
-    background: transparent;
+    background: $red;
     color: transparent;
+    border-radius: 50%;
     top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -78,33 +35,30 @@ $slick-opacity-not-active: 0.25 !default;
     padding: 0;
     border: none;
     outline: none;
-    &:hover, &:focus {
-        outline: none;
-        background: transparent;
-        color: transparent;
+    &:hover{
+        background: $white;
         &:before {
-            opacity: $slick-opacity-on-hover;
+            filter: invert(40%) sepia(51%) saturate(4223%) hue-rotate(336deg) brightness(95%) contrast(92%);
         }
     }
     &.slick-disabled:before {
         opacity: $slick-opacity-not-active;
     }
     &:before {
-        font-family: $slick-font-family;
-        font-size: 20px;
         line-height: 1;
         color: $slick-arrow-color;
-        opacity: $slick-opacity-default;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 }
 
 .slick-prev {
-    left: -25px;
+    left: 93px;
+    z-index: 222;
+    transform: rotate(180deg) translate(0, 50%);
     [dir="rtl"] & {
         left: auto;
-        right: -25px;
+        right: 93px;
     }
     &:before {
         content: $slick-prev-character;
@@ -112,18 +66,31 @@ $slick-opacity-not-active: 0.25 !default;
             content: $slick-next-character;
         }
     }
+    @media($tablet){
+        left: 22px;
+        [dir="rtl"] & {
+            right: 22px;
+        }
+    }
 }
 
 .slick-next {
-    right: -25px;
+    right: 93px;
+    z-index: 222;
     [dir="rtl"] & {
-        left: -25px;
+        left: 93px;
         right: auto;
     }
     &:before {
         content: $slick-next-character;
         [dir="rtl"] & {
             content: $slick-prev-character;
+        }
+    }
+    @media($tablet){
+        right: 22px;
+        [dir="rtl"] & {
+            left: 22px;
         }
     }
 }
@@ -189,6 +156,18 @@ $slick-opacity-not-active: 0.25 !default;
         &.slick-active button:before {
             color: $slick-dot-color-active;
             opacity: $slick-opacity-default;
+        }
+    }
+}
+.slick-slide{
+    margin: 0 4px;
+    width: 235px;
+    &.slick-current{
+        width: 938px;
+    }
+    @media($tablet){
+        &.slick-current{
+            width: 600px;
         }
     }
 }

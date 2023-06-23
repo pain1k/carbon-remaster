@@ -1,0 +1,16 @@
+.slider-item{
+  width: 100%;
+  max-width: 100%;
+  height: 496px;
+  &__image{
+    width: 100%;
+    height: 100%;
+    border-radius: $radius;
+    object-fit: cover;
+  }
+  @media($tablet){
+    &__image{
+      border-radius: $sm-radius;
+    }
+  }
+}

@@ -10,9 +10,6 @@ if ($touchScroller.length) {
 
         $touchScroller.on('mousemove', function (e) {
 
-            // $t.find('a').on('click', function (e) {
-            //     e.preventDefault()
-            // })
 
             $t.scrollLeft(startX - e.pageX)
         });
@@ -23,9 +20,6 @@ if ($touchScroller.length) {
 
         $touchScroller.off("mousemove");
 
-        // setTimeout(function () {
-        //     $t.find('a').off('click')
-        // }, 100)
     });
 
     $touchScroller.on('mouseleave', function () {

@@ -84,10 +84,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    //max-height: 40px;
-    //-webkit-line-clamp: 1;
-    //-webkit-box-orient: vertical;
-    //display: -webkit-box;
     text-align: right;
     margin-left: auto;
   }
@@ -119,7 +115,7 @@
     .prev-item__icon{
       background-color: $white;
       img{
-        filter: invert(1);
+        filter: invert(40%) sepia(51%) saturate(4223%) hue-rotate(336deg) brightness(95%) contrast(92%);
       }
     }
     .prev-item__subtitle,
@@ -179,10 +175,6 @@
     max-width: 253px;
     overflow: hidden;
     text-overflow: ellipsis;
-    //max-height: 40px;
-    //-webkit-line-clamp: 1;
-    //-webkit-box-orient: vertical;
-    //display: -webkit-box;
   }
   &__wrapper{
     display: flex;
@@ -210,7 +202,7 @@
     .next-item__icon{
       background-color: $white;
       img{
-        filter: invert(1);
+        filter: invert(40%) sepia(51%) saturate(4223%) hue-rotate(336deg) brightness(95%) contrast(92%);
       }
     }
     .next-item__subtitle,
