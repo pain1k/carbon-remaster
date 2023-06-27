@@ -1,8 +1,7 @@
 @import 'utils/vars';
 @import 'utils/fonts';
 @import 'utils/reset';
-//@import 'sections/header';
-@import 'sections/footer';
+
 @import "utils/globals";
 @import 'sections/lead-block';
 @import 'sections/main';
@@ -21,7 +20,6 @@
 @import 'sections/method';
 @import 'sections/advantages';
 @import 'sections/prices';
-//@import 'sections/order';
-//@import "~select2";
-//@import 'sections/select2-custom';
-//@import 'sections/footer';
+
+@import 'sections/header';
+@import 'sections/footer';

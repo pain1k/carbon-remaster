@@ -1,0 +1,28 @@
+.logo{
+  display: flex;
+  align-items: center;
+  &__img{
+    width: 100%;
+    max-width: 116px;
+    height: 28px;
+  }
+  &__text{
+    font-size: 12px;
+    line-height: 14px;
+    color: $gray-4;
+    display: inline-block;
+    font-weight: 800;
+    max-width: 223px;
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid $gray-1;
+  }
+  @media($mobile){
+    &__img{
+      max-width: 128px;
+    }
+    &__text{
+      display: none;
+    }
+  }
+}

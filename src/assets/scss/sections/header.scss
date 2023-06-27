@@ -1,94 +1,248 @@
 .header{
-  background: rgba(16, 16, 29, 0.9);
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  padding: 33px 0;
-  &__wrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &__logo{
-    height: 35px;
-    display: flex;
-    align-items: center;
-  }
-  &__btn{
-    display: none;
-    background: transparent;
-    cursor: pointer;
-    @media(max-width: 767px){
-      display: block;
-    }
-  }
-}
-
-.nav{
-  display: flex;
   color: $white;
-  @media($mobile){
-    position: absolute;
-    background: rgba(16, 16, 29, 0.9);
-    width: 100%;
-    left: 0;
-    top: 114px;
-    flex-direction: column;
-    display: none;
-    &.opened{
-      display: flex;
-    }
+  padding: 25px 120px;
+  &__wrapper,
+  &__center,
+  &__list,
+  &__contacts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__wrapper{
+    justify-content: space-between;
+  }
+  &__center{
+    flex-grow: 1;
+    transition: .3s;
   }
   &__item{
-    text-transform: uppercase;
-    margin-right: 60px;
-    &:last-child{
-      margin-right: 0;
-    }
-    &.active{
-      .nav__link{
-        color:$blue
-      }
-    }
-    &:hover{
-      .nav__link{
-        &:after{
-          width: 100%;
-          right: auto;
+    position: relative;
+    &:first-child{
+        padding-left: 28px;
+        &:before{
+          content: url("../../static/img/list-logo.svg");
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          left: 0;
+          bottom: 4px;
         }
-      }
     }
-    @media($mobile){
-      padding: 10px 0;
-      margin-right: 0;
-      text-align: center;
-      &__item{
-        margin-right: 0;
-      }
-      &:hover{
-        background: rgba(16,16,29,1);
-        .nav__link{
-          &:after{
-            display: none;
-          }
-        }
-      }
+    &:not(:first-child){
+      margin-left: 32px;
     }
   }
   &__link{
-    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 800;
     position: relative;
-
-    &:after{
-      content: '';
-      background: $white;
-      height: 1px;
-      width: 0;
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      transition: all .3s linear;
+    &:hover{
+      opacity: .7;
+      &:before{
+        opacity: .7;
+      }
+    }
+  }
+  &__center{
+    margin-left: 92px;
+  }
+  &__contacts{
+    margin-left: 79px;
+    letter-spacing: -1.5px;
+  }
+  &__mail{
+    margin-left: 24px;
+    letter-spacing: -1.5px;
+  }
+  &__mail,
+  &__phone{
+    &-link{
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 800;
+      position: relative;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+  &__button,
+  &__more{
+    display: none;
+  }
+  &__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    min-width: 48px;
+    width: 48px;
+    cursor: pointer;
+    background: $white;
+    border-radius: 50%;
+    top: 50%;
+    padding: 0;
+    border: none;
+    outline: none;
+    margin-left: 57px;
+    &:before{
+      content: url('../../static/img/arrow.svg');
+      filter: invert(40%) sepia(51%) saturate(4223%) hue-rotate(336deg) brightness(95%) contrast(92%);
+      height: 32px;
+    }
+  }
+  &__callback{
+    margin-left: auto;
+    margin-left: 39px;
+    border-radius: 50%;
+    background-color: $gray;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media(min-width: 1500px){
+    &__logo{
+      flex-grow: 1;
+    }
+    &__center{
+      justify-content: space-between;
+    }
+  }
+  @media(max-width:1430px){
+    padding: 25px 16px;
+    &__contacts,
+    &__center{
+      margin-left: 0;
+    }
+    &__center{
+      justify-content: space-evenly;
+    }
+  }
+  @media($tablet){
+    justify-content: unset;
+    padding: 16px 24px;
+    &__logo{
+      margin-left: 24px;
+    }
+    &__center{
+      display: none;
+      &_opened{
+        display: block;
+        position: absolute;
+        top: 64px;
+        background: $dark;
+        width: 100%;
+        left: 0;
+        z-index: 15;
+        padding: 0 24px 24px;
+      }
+    }
+    &__list{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__item{
+      border-bottom: 1px solid $gray-1;
+      width: 100%;
+      display: flex;
+      padding: 16px 0;
+      &:first-child{
+        border-top: 1px solid $gray-1;
+        padding-left: 0;
+        .header__link{
+          padding-left: 28px;
+          &:before{
+            content: url("../../static/img/list-logo.svg");
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            bottom: 50%;
+            transform: translateY(50%);
+          }
+        }
+          &:before{
+            content: none;
+          }
+      }
+      &:not(:first-child){
+        margin-left: 0;
+      }
+    }
+    &__link{
+      display: inline-block;
+    }
+    &__contacts{
+      padding: 24px;
+      margin-top: 109px;
+      flex-direction: column;
+      background-color: $gray-1;
+      border-radius: 24px;
+      align-items: flex-start;
+      max-width: 325px;
+    }
+    &__phone,
+    &__mail{
+      width: 100%;
+      &-link{
+        display: inline-block;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 800;
+        letter-spacing: .1px;
+      }
+    }
+    &__phone{
+      padding-bottom: 16px;
+    }
+    &__mail{
+      margin-left: 0;
+      border-top: 1px solid $gray-2;
+      padding-top: 16px;
+    }
+    &__more{
+      display: block;
+      filter: invert(40%) sepia(51%) saturate(4223%) hue-rotate(336deg) brightness(95%) contrast(92%);
+      transition: .3s;
+      cursor:pointer;
+      margin-left: auto;
+      &:hover{
+        transform: rotate(90deg);
+      }
+      &_opened{
+        transform: rotate(90deg);
+      }
+    }
+    &__button{
+      display: inline-flex;
+      align-items: center;
+      padding: 24px;
+      background-color: $red;
+      border-radius: 24px;
+      margin-top: 24px;
+      @include title2($white);
+      font-weight: 800;
+      &:hover{
+        background: $hovered;
+        .header__icon:before {
+          filter: invert(1);
+        }
+      }
+      &:active{
+        background: $active;
+        .header__icon:before {
+          filter: invert(1);
+        }
+      }
+    }
+    &__callback{
+      width: 32px;
+      height: 32px;
+      margin-left: auto;
     }
   }
 }
