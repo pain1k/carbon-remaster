@@ -149,14 +149,15 @@
         padding-left: 0;
         .header__link{
           padding-left: 28px;
+          padding-bottom: 0;
           &:before{
             content: url("../../static/img/list-logo.svg");
             position: absolute;
             width: 16px;
             height: 16px;
             left: 0;
-            bottom: 50%;
-            transform: translateY(50%);
+            top: 50%;
+            transform: translateY(-50%);
           }
         }
           &:before{

@@ -80,6 +80,7 @@
     }
     &__back{
       display: flex;
+      cursor: pointer;
       position: relative;
       padding-left: 20px;
       font-size: 12px;
@@ -111,7 +112,6 @@
       }
       &-icon{
         display: none;
-        //display: flex;
         &_visible{
           display: flex;
           margin-right: 0;
@@ -120,9 +120,13 @@
           width: 12px;
           height: 12px;
           min-width: 12px;
+          cursor: pointer;
           img{
             filter: invert(40%) sepia(51%) saturate(4223%) hue-rotate(336deg) brightness(95%) contrast(92%);
           }
+        }
+        &_opened{
+          transform: rotate(90deg);
         }
       }
     }
