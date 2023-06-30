@@ -34,16 +34,10 @@
     }
   }
   &__icon{
-    background-color: $red;
-    border-radius: 50%;
-    min-width: 32px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-right: 32px;
-    transition: .3s all;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
     &:hover{
       background-color: $white;
       img{

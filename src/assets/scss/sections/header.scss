@@ -17,20 +17,28 @@
     transition: .3s;
   }
   &__item{
-    position: relative;
     &:first-child{
+      .header__link{
         padding-left: 28px;
+        padding-bottom: 37px;
         &:before{
           content: url("../../static/img/list-logo.svg");
           position: absolute;
           width: 16px;
           height: 16px;
           left: 0;
-          bottom: 4px;
+          top: 0;
         }
+      }
     }
     &:not(:first-child){
       margin-left: 32px;
+    }
+    &:hover{
+      .overlay{
+        opacity: 1;
+        z-index: 1000;
+      }
     }
   }
   &__link{
@@ -73,25 +81,7 @@
     display: none;
   }
   &__icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 48px;
-    min-width: 48px;
-    width: 48px;
-    cursor: pointer;
-    background: $white;
-    border-radius: 50%;
-    top: 50%;
-    padding: 0;
-    border: none;
-    outline: none;
     margin-left: 57px;
-    &:before{
-      content: url('../../static/img/arrow.svg');
-      filter: invert(40%) sepia(51%) saturate(4223%) hue-rotate(336deg) brightness(95%) contrast(92%);
-      height: 32px;
-    }
   }
   &__callback{
     margin-left: auto;
@@ -103,6 +93,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    &:hover{
+      opacity: .7;
+    }
   }
   @media(min-width: 1500px){
     &__logo{
@@ -218,26 +212,9 @@
       }
     }
     &__button{
-      display: inline-flex;
-      align-items: center;
       padding: 24px;
-      background-color: $red;
-      border-radius: 24px;
       margin-top: 24px;
-      @include title2($white);
-      font-weight: 800;
-      &:hover{
-        background: $hovered;
-        .header__icon:before {
-          filter: invert(1);
-        }
-      }
-      &:active{
-        background: $active;
-        .header__icon:before {
-          filter: invert(1);
-        }
-      }
+      display: inline-flex;
     }
     &__callback{
       width: 32px;
