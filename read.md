@@ -1,4 +1,5 @@
-```{r, attr.source='.numberLines'}
+```
+{r, attr.source='.numberLines'}
 if (TRUE) {
   x <- 1:10
   x + 1
